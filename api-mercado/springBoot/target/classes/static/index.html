@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- REDIRECIONAMENTO SE NÃO ESTIVER LOGADO -->
+  <script>
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // usa replace para não manter o histórico desta página
+      window.location.replace('login.html');
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f4f7fa;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+    }
+    .menu-header {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .menu-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .menu-header p {
+      font-size: 1rem;
+      color: #666;
+    }
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+    .menu-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .menu-card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background-color: #1abc9c;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+    .menu-card a:hover {
+      background-color: #17a589;
+    }
+    .menu-card .icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      color: #1abc9c;
+    }
+    .menu-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-header">
+    <h1>Supermarket</h1>
+    <p>Escolha uma das seções abaixo para acessar o sistema</p>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-card">
+      <div class="icon">📦</div>
+      <h2>Produtos</h2>
+      <p>Adicione, edite e liste seus produtos.</p>
+      <a href="produtos.html">Ir para Produtos</a>
+    </div>
+
+    <div class="menu-card">
+      <div class="icon">👥</div>
+      <h2>Funcionários</h2>
+      <p>Cadastre, faça login e atualize colaboradores.</p>
+      <a href="funcionarios.html">Ir para Funcionários</a>
+    </div>
+
+    <div class="menu-card">
+      <div class="icon">🛒</div>
+      <h2>Compras</h2>
+      <p>Registre, liste e consulte transações.</p>
+      <a href="compras.html">Ir para Compras</a>
+    </div>
+  </div>
+</body>
+</html>
